@@ -1,0 +1,1 @@
+export const NOVO_VALOR = 'NOVO_VALOR'

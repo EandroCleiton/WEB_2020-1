@@ -1,0 +1,10 @@
+.container {
+  text-align: center;
+  background-color: gray;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
