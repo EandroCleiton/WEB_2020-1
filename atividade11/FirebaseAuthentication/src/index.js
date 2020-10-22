@@ -4,26 +4,10 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App';
 
+import { Provider } from 'react-redux'
+import { ReactReduxFirebaseProvider} from 'react-redux-firebase'
 
-import {createStore,applyMiddleware} from 'redux'
-import {Provider} from 'react-redux'
-import {ReactReduxFirebaseProvider} from 'react-redux-firebase'
-import reduxThunk from 'redux-thunk'
-
-import reducer from './store/reducers'
-import firebase from './utils/firebase'
-
-const store = createStore(
-  reducer,
-  {},
-  applyMiddleware(reduxThunk)
-)
-
-const rrfProps ={
-  firebase,
-  config:{},
-  dispatch: store.dispatch
-}
+import { store, rrfProps } from './store/storeConfig'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -33,4 +17,3 @@ ReactDOM.render(
   </Provider>
   , document.getElementById('root')
 );
-
