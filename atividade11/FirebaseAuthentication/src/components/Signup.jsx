@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Card from './Card'
+import Card from './commons/Card'
 
 import {connect} from 'react-redux'
 import {signup} from '../store/actions/authActionCreator' 

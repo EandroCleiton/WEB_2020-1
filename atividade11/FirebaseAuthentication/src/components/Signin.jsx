@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Card from './Card'
+import Card from './commons/Card'
 
 import {connect} from 'react-redux'
 import {signin} from '../store/actions/authActionCreator' 
@@ -30,7 +30,7 @@ class Signin extends Component{
     }
     render(){
         return(
-            <Card title='Singup'>
+            <Card title='Singin'>
            <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
                         <label>Login: </label>

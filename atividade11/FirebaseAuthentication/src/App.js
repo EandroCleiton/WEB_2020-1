@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import Create from './components/Create'
 import Edit from './components/Edit'
 import List from './components/List'
+import Logout from './components/ContentA'
 
 import { connect } from 'react-redux'
 
@@ -30,12 +31,14 @@ class App extends Component {
                   <Link to={'/signup'} className='nav-link'>Cadastrar</Link>
                 </li>
                 <li>
-                  <Link to={'/create'} className='nav-link'>Criar</Link>
+                  <Link to={'/create'} className='nav-link'>Criar Disciplina</Link>
                 </li>
                 <li>
                   <Link to={'/list'} className='nav-link'>Listar</Link>
                 </li>
-
+                <li>
+                  <Link to={'/contentA'} className='nav-link'>Logout</Link>
+                </li>
               </ul>
               {this.props.user}
             </div>  
@@ -47,6 +50,7 @@ class App extends Component {
             <Route path='/create' component={Create}/>
             <Route path='/edit/:id' component={Edit}/>
             <Route path='/list' component={List}/>
+            <Route path='/contentA' component={Logout}/>
           </Switch>
         </div>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 import { SIGNUP_SUCCESS, SIGNUP_ERROR, SIGNIN_SUCCESS, SIGNIN_ERROR, SIGNOUT_SUCCESS, SIGNOUT_ERROR, RESET_AUTH_MESSAGE, EMAIL_NOT_VERIFIED} from './actionTypes'
 import firebase from '../../utils/firebase'
 
-export const signup = (email, password, callback) => {
+export const signup = (email, password) => {
     return dispatch => {
         try {
             firebase
@@ -22,22 +22,22 @@ export const signup = (email, password, callback) => {
                                     dispatch({
                                         type: SIGNUP_SUCCESS,
                                         payload: {
-                                            authMessage: `Cadastro efetuado com sucesso! Verifque seu e-mail.`,
+                                            authMessage: `Cadastro efetuado com sucesso! Verifique seu e-mail.`,
                                             userMail: '',
                                             verified: false
                                         }
                                     })
-                                    callback()
+                                    
                                 } else {
                                     dispatch({
                                         type: SIGNUP_ERROR,
                                         payload: { authMessage: `Não foi possível conectar` }
                                     })
-                                    callback()
+                                   
                                 }
                             }
-                        )//firebase.auth().onAuthStateChanged(
-                    }//se deu certo
+                        )
+                    }
                 )
                 .catch(
                     (error) => {
@@ -45,7 +45,7 @@ export const signup = (email, password, callback) => {
                             type: SIGNUP_ERROR,
                             payload: { authMessage: `Erro na criação do usuário: ${error}` }
                         })
-                        callback()
+                        
                     }
                 )
         } catch (error) {
@@ -53,10 +53,10 @@ export const signup = (email, password, callback) => {
                 type: SIGNUP_ERROR,
                 payload: { authMessage: `Erro na conexão com o firebase: ${error}` }
             })
-            callback()
-        } //try-catch
+            
+        } 
 
-    } //return dispatch
+    } 
 }
 
 export const signin = (email, password, callback) => {

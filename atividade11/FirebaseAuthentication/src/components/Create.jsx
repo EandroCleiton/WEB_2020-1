@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import Card from './commons/RestrictCard'
 export default class Create extends Component {
 
     constructor(props) {
@@ -50,7 +50,8 @@ export default class Create extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: 10 }}>
+            <Card title='Conteúdo A' history={this.props.history}>
+            
                 <h3>Criar Disciplina</h3>
                 <form onSubmit={this.onSubmit}>
 
@@ -75,7 +76,8 @@ export default class Create extends Component {
                     </div>
                 </form>
 
-            </div>
+            </Card>
         )
     }
 }
+

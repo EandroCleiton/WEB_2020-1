@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import Card from './commons/RestrictCard'
 import TableRow from './TableRow'
 
 export default class List extends Component {
@@ -50,7 +50,7 @@ export default class List extends Component {
 
     render() {
         return (
-            <div style={{ marginTop: 10 }}>
+            <Card title='List' history={this.props.history}>
                 <h3>Listar Disciplinas</h3>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
@@ -69,7 +69,7 @@ export default class List extends Component {
                 </table>
 
 
-            </div>
+            </Card>
         )
     }
 }
